@@ -1,0 +1,14 @@
+[
+  {
+    "id": "shadorux",
+    "name": "Shadorux",
+    "url": "https://shadorux.dev/",
+    "description": "A network of Shadow the Hedgehog fan sites, archives, tools, and web projects."
+  },
+  {
+    "id": "shadow-shrine",
+    "name": "Shadow Shrine",
+    "url": "https://shadowshrine.shadorux.dev/home",
+    "description": "A dedicated Shadow the Hedgehog shrine in the Shadorux network."
+  }
+]
