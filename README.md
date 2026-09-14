@@ -8,10 +8,16 @@
 
 Shadow shrines, fan sites, archives, blogs, tools, graphics sites, and other independent Shadow-focused web projects are welcome.
 
+### Submit by pull request — fastest
+
 1. Fork this repository.
 2. Add your site to `sites.json` using a unique lowercase ID.
 3. Add the Shadow Webring widget to the URL you submitted.
 4. Open a pull request.
+
+### Submit by email
+
+Don't want to use GitHub? Email **support@shadorux.dev** with your site name, URL, a short description, and the ID you'd like to use. Email submissions are usually seen within a few days; **pull requests are faster**.
 
 Example registry entry:
 
