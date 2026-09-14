@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Shadow Webring connects independent Shadow the Hedgehog fan sites, shrines, archives, tools and projects.">
+  <title>Shadow Webring — Shadorux</title>
+  <style>
+    :root{color-scheme:dark;--bg:#080808;--panel:#101010;--red:#d10a16;--deep:#75020f;--text:#f2f2f2;--muted:#999}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}a{color:inherit}.shell{width:min(1000px,calc(100% - 32px));margin:auto;padding:64px 0}.eyebrow{color:var(--red);font-weight:800;letter-spacing:.14em}.hero{border-left:8px solid var(--red);padding:18px 0 18px 28px;margin:24px 0 42px}.hero h1{font:900 clamp(48px,10vw,112px)/.88 Arial,sans-serif;letter-spacing:-.06em;margin:0;text-transform:uppercase}.hero h1 span{color:var(--red)}.hero p{max-width:720px;color:#bbb;font-size:17px;line-height:1.7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.button{display:inline-block;padding:12px 16px;border:1px solid var(--deep);text-decoration:none;font-weight:800}.button.primary{background:var(--red);border-color:var(--red)}.status{border:1px solid #292929;background:var(--panel);padding:18px;margin:38px 0}.status strong{color:var(--red)}h2{font:800 28px Arial,sans-serif;text-transform:uppercase;margin-top:52px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}.card{display:block;border:1px solid #292929;background:var(--panel);padding:20px;text-decoration:none}.card:hover,.card:focus-visible{border-color:var(--red)}.card strong{display:block;font:800 20px Arial,sans-serif;margin-bottom:8px}.card span{color:var(--muted);line-height:1.5}.empty{color:var(--muted)}footer{border-top:1px solid #292929;margin-top:64px;padding-top:24px;color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+<main class="shell">
+  <div class="eyebrow">SHADORUX / OPEN WEB</div>
+  <section class="hero">
+    <h1>SHADOW<br><span>WEBRING</span></h1>
+    <p>A community ring connecting independent Shadow the Hedgehog fan sites. No feed. No algorithm. Just one Shadow site leading to another.</p>
+    <div class="actions">
+      <a class="button primary" href="https://github.com/Shadorux/shadow-webring#join-the-ring">JOIN THE RING</a>
+      <a class="button" href="https://github.com/Shadorux/shadow-webring">VIEW SOURCE</a>
+    </div>
+  </section>
+  <div class="status">ESTABLISHING CONNECTION… <strong id="count">— NODES ONLINE</strong></div>
+  <h2>Member nodes</h2>
+  <div class="grid" id="sites"><p class="empty">Loading registry…</p></div>
+  <footer>SHADOW WEBRING · A SHADORUX OPEN WEB PROJECT · Unofficial fan project; not affiliated with SEGA.</footer>
+</main>
+<script>
+fetch('./sites.json',{cache:'no-store'}).then(r=>r.json()).then(sites=>{
+  document.querySelector('#count').textContent=`${sites.length} ${sites.length===1?'NODE':'NODES'} ONLINE`;
+  const grid=document.querySelector('#sites');grid.innerHTML='';
+  sites.forEach(site=>{const a=document.createElement('a');a.className='card';a.href=site.url;a.innerHTML=`<strong></strong><span></span>`;a.querySelector('strong').textContent=site.name;a.querySelector('span').textContent=site.description||site.url;grid.append(a)});
+}).catch(()=>{document.querySelector('#sites').innerHTML='<p class="empty">Registry unavailable.</p>'});
+</script>
+</body>
+</html>
