@@ -10,5 +10,11 @@
     "name": "Shadow Shrine",
     "url": "https://shadowshrine.shadorux.dev/home",
     "description": "A dedicated Shadow the Hedgehog shrine in the Shadorux network."
+  },
+  {
+    "id": "shadomega-stage",
+    "name": "Shadomega Stage",
+    "url": "https://shadomega.neocities.org/",
+    "description": "A Shadow and E-123 Omega fan archive preserving Shadomega artwork, fanfiction, and other fanworks."
   }
 ]
